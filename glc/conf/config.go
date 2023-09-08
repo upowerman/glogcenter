@@ -62,7 +62,7 @@ func init() {
 
 func UpdateConfigByEnv() {
 	// 读取环境变量初始化配置，各配置都有默认值
-	storeRoot = cmn.GetEnvStr("GLC_STORE_ROOT", "/glogcenter")                  // 存储根目录
+	storeRoot = cmn.GetEnvStr("GLC_STORE_ROOT", "./glogcenter")                 // 存储根目录
 	storeChanLength = cmn.GetEnvInt("GLC_STORE_CHAN_LENGTH", 64)                // 存储通道长度
 	maxIdleTime = cmn.GetEnvInt("GLC_MAX_IDLE_TIME", 180)                       // 最大闲置时间（秒）,超过闲置时间将自动关闭，0时表示不关闭
 	storeNameAutoAddDate = cmn.GetEnvBool("GLC_STORE_NAME_AUTO_ADD_DATE", true) // 存储名是否自动添加日期（日志量大通常按日单位区分存储），默认true
